@@ -1,50 +1,51 @@
 targetScope = 'resourceGroup'
 
-param location                                  string
+param location string
 
-// Virtual Network Parameters
-param vnetName                                  string
-param vnetAddressPrefixes                       array
-param subnetArray                               array
-param publicIPAddressSettingDiagName            string
+//Virtual Network Parameters
+param vnetName string
+param vnetAddressPrefixes array
+param subnetArray array
+param publicIPAddressSettingDiagName string
 
-// VPN Gateway
-param VPNGWName                                 string
-param PIPName                                   string
-param aadAudience                               string
-param tenantId                                  string
-param vpnClientAddressPool                      array
-param sku                                       string
-param vpnGatewayGeneration                      string
+//VPN Gateway
+param VPNGWName string
+param PIPName string
+param aadAudience string
+param tenantId string
+param vpnClientAddressPool array
+param sku string
+param vpnGatewayGeneration string
 
-// VPN Gateway Connection
-param gatewaySettingDiagName                    string
+//VPN Gateway Connection
+param gatewaySettingDiagName string
 
-// Azure Firewall
-param fwMgmtPublicIpAddressName                 string
-param fwName                                    string
-param fwNetworkRulesList                        array
-param fwNatRulesList                            array
-param fwAppRulesList                            array
-param fwZones                                   array
-param fwPublicIpAddress                         array
-param fwTier                                    string
-param fwSettingDiagName                         string
+//Azure Firewall
+param fwMgmtPublicIpAddressName string
+param fwName string
+param fwNetworkRulesList array
+param fwNatRulesList array
+param fwAppRulesList array
+param fwZones array
+param fwPublicIpAddress array
+param fwTier string
+param fwSettingDiagName string
 
 
 // Azure DNS private
-param privateDNSZones                           array
+param privateDNSZones array
 
-// Monitoring
-param logAnalyticsNetWatchName                  string
-param mngResourceGroupName                      string
-param storageNetWatchName                       string
-param networkWatcherName                        string
+//Monitoring
+param logAnalyticsNetWatchName string
+param mngResourceGroupName string
+param storageNetWatchName string
+param networkWatcherName string
 
-param settingDiaglogAnalyticsWSName             string
+param settingDiaglogAnalyticsWSName string
 
 module modLogAnalyticsDiag '../modules/loganalytics-diag-template.bicep' = {
   name: 'loganalyticsdiag-deployment'
+  scope: resourceGroup(mngResourceGroupName)
   params: {
     location: location
     logAnalyticsWSName: settingDiaglogAnalyticsWSName

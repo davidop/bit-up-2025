@@ -62,6 +62,7 @@ param settingDiaglogAnalyticsWSName string
 
 module modLogAnalyticsDiag '../modules/loganalytics-diag-template.bicep' = {
   name: 'loganalyticsdiag-deployment'
+  scope: resourceGroup(mngResourceGroupName)
   params: {
     location: location
     logAnalyticsWSName: settingDiaglogAnalyticsWSName

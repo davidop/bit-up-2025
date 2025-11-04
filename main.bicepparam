@@ -273,6 +273,6 @@ param requestRoutingRules                     = [
 param skuName                                 = 'WAF_v2'
 param skuSize                                 = 'WAF_v2'
 param zones                                   = ['1','2','3']
-param juiceShopSettingDiaglogAnalyticsWSName  = 'law-bitup2025-appgw-juice-shop-ne'
+param juiceShopSettingDiaglogAnalyticsWSName  = 'la-bitup2025-appgw-juice-shop-ne'
 param juiceShopLogAnalyticsNetWatchName       = 'la-bitup2025-networkwatcher-juiceshop'
 param juiceShopStgNetWatchName                = 'stbunetwatjsne01'
